@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="aVZ-Y4-SKP">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Controller-->
+        <scene sceneID="zmM-qs-Eq1">
+            <objects>
+                <viewController id="aVZ-Y4-SKP" customClass="LaunchViewController" customModule="Route" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Ocz-v7-dLw">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="MPg-uo-ZQx"/>
+                    </view>
+                    <connections>
+                        <outlet property="router" destination="y67-gV-5ar" id="gb6-iB-2zL"/>
+                        <segue destination="byg-Ic-kJ5" kind="show" identifier="toAuth" customClass="RootSegue" customModule="Route" customModuleProvider="target" id="Vxf-Dj-V71"/>
+                        <segue destination="8oZ-Fa-F0G" kind="show" identifier="toMain" customClass="RootSegue" customModule="Route" customModuleProvider="target" id="UoM-Vd-uVL"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="k0e-dF-MFx" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <customObject id="y67-gV-5ar" customClass="LaunchRouter" customModule="Route" customModuleProvider="target">
+                    <connections>
+                        <outlet property="controller" destination="aVZ-Y4-SKP" id="DKd-Df-YAb"/>
+                    </connections>
+                </customObject>
+            </objects>
+            <point key="canvasLocation" x="296" y="-5"/>
+        </scene>
+        <!--Auth-->
+        <scene sceneID="JBE-XD-ACN">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Auth" id="byg-Ic-kJ5" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8mu-K7-wRt" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="883" y="-138"/>
+        </scene>
+        <!--Main-->
+        <scene sceneID="g9K-Zu-meU">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Main" id="8oZ-Fa-F0G" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="E57-wU-8mO" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="883" y="133"/>
+        </scene>
+    </scenes>
+</document>

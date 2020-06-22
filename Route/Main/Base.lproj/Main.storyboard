@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="NtB-N0-QJh">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Controller-->
+        <scene sceneID="Hwr-IQ-fHu">
+            <objects>
+                <viewController id="qPc-2w-bKY" customClass="MainViewController" customModule="Route" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Xp1-8a-UJ8">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HIb-lY-A2C">
+                                <rect key="frame" x="184" y="433" width="46" height="30"/>
+                                <state key="normal" title="Выйти"/>
+                                <connections>
+                                    <action selector="logout:" destination="qPc-2w-bKY" eventType="touchUpInside" id="idI-XB-Y23"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="viI-Xo-31S">
+                                <rect key="frame" x="151.5" y="393" width="111" height="30"/>
+                                <state key="normal" title="Показать карту"/>
+                                <connections>
+                                    <action selector="showMap:" destination="qPc-2w-bKY" eventType="touchUpInside" id="aG7-IB-f6z"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2No-10-EfY">
+                                <rect key="frame" x="152.5" y="473" width="109" height="30"/>
+                                <state key="normal" title="Сделать сэлфи"/>
+                                <connections>
+                                    <action selector="takePicture:" destination="qPc-2w-bKY" eventType="touchUpInside" id="DhD-CD-Lus"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="HIb-lY-A2C" firstAttribute="centerX" secondItem="Xp1-8a-UJ8" secondAttribute="centerX" id="1Zb-ME-Hzh"/>
+                            <constraint firstItem="HIb-lY-A2C" firstAttribute="centerY" secondItem="Xp1-8a-UJ8" secondAttribute="centerY" id="QnY-Py-MRI"/>
+                            <constraint firstItem="viI-Xo-31S" firstAttribute="centerX" secondItem="Xp1-8a-UJ8" secondAttribute="centerX" id="RJc-p0-93g"/>
+                            <constraint firstItem="2No-10-EfY" firstAttribute="centerY" secondItem="Xp1-8a-UJ8" secondAttribute="centerY" constant="40" id="SY4-UF-U7c"/>
+                            <constraint firstItem="viI-Xo-31S" firstAttribute="centerY" secondItem="Xp1-8a-UJ8" secondAttribute="centerY" constant="-40" id="f1J-QA-adW"/>
+                            <constraint firstItem="2No-10-EfY" firstAttribute="centerX" secondItem="Xp1-8a-UJ8" secondAttribute="centerX" id="p5d-Uo-Abm"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="2Yr-L5-Zdi"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="6Gy-yb-9yX"/>
+                    <connections>
+                        <outlet property="router" destination="iAB-4x-jns" id="aZh-jH-mpx"/>
+                        <segue destination="BYZ-38-t0r" kind="show" identifier="toMap" id="vKe-pp-Y42"/>
+                        <segue destination="5Ja-9T-EuR" kind="show" identifier="toLaunch" customClass="RootSegue" customModule="Route" customModuleProvider="target" id="B74-B0-cWF"/>
+                        <segue destination="etA-Dc-LtK" kind="show" identifier="toSelfie" id="q8L-ha-WRt"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tp2-Eg-1c5" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <customObject id="iAB-4x-jns" customClass="MainRouter" customModule="Route" customModuleProvider="target">
+                    <connections>
+                        <outlet property="controller" destination="qPc-2w-bKY" id="QUv-k3-bKK"/>
+                    </connections>
+                </customObject>
+            </objects>
+            <point key="canvasLocation" x="946.37681159420299" y="20.758928571428569"/>
+        </scene>
+        <!--Selfie View Controller-->
+        <scene sceneID="RD2-5w-GAO">
+            <objects>
+                <viewController id="etA-Dc-LtK" customClass="SelfieViewController" customModule="Route" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="r8C-26-RJN">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="CMJ-Q0-zBy">
+                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="CMJ-Q0-zBy" firstAttribute="top" secondItem="hPO-VU-Z9w" secondAttribute="top" id="0kX-T0-UZW"/>
+                            <constraint firstItem="hPO-VU-Z9w" firstAttribute="bottom" secondItem="CMJ-Q0-zBy" secondAttribute="bottom" id="8BN-xA-K7D"/>
+                            <constraint firstItem="hPO-VU-Z9w" firstAttribute="trailing" secondItem="CMJ-Q0-zBy" secondAttribute="trailing" id="KZG-ji-HDp"/>
+                            <constraint firstItem="CMJ-Q0-zBy" firstAttribute="leading" secondItem="hPO-VU-Z9w" secondAttribute="leading" id="hYA-S7-F3c"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="hPO-VU-Z9w"/>
+                    </view>
+                    <connections>
+                        <outlet property="imageView" destination="CMJ-Q0-zBy" id="ysP-f2-Bs2"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dJT-As-uWn" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="946" y="827"/>
+        </scene>
+        <!--Launch-->
+        <scene sceneID="NsK-e0-Ejf">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Launch" id="5Ja-9T-EuR" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kky-Ok-NHY" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1543" y="-440"/>
+        </scene>
+        <!--Карта-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="MapViewController" customModule="Route" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yGz-hp-xe5" customClass="GMSMapView">
+                                <rect key="frame" x="0.0" y="88" width="414" height="808"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9cy-sr-spL">
+                                <rect key="frame" x="125" y="822" width="164" height="30"/>
+                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="15"/>
+                                <state key="normal" title="Предыдущий маршрут">
+                                    <color key="titleColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
+                                </state>
+                                <connections>
+                                    <action selector="showLastRoute:" destination="BYZ-38-t0r" eventType="touchUpInside" id="bXe-Sj-X9p"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="9cy-sr-spL" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Fmv-2r-oOS"/>
+                            <constraint firstAttribute="bottom" secondItem="yGz-hp-xe5" secondAttribute="bottom" id="QjY-Kc-8g6"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="9cy-sr-spL" secondAttribute="bottom" constant="10" id="SI1-lf-crV"/>
+                            <constraint firstItem="yGz-hp-xe5" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="VHZ-Bl-ThT"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="yGz-hp-xe5" secondAttribute="trailing" id="ja9-FN-ons"/>
+                            <constraint firstItem="yGz-hp-xe5" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="lui-cL-GJT"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Карта" id="iYg-cp-fjm">
+                        <rightBarButtonItems>
+                            <barButtonItem title="Стоп" id="7YD-yc-xC7">
+                                <connections>
+                                    <action selector="stopUpdateLocation:" destination="BYZ-38-t0r" id="Lfj-jP-VN6"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem title="Старт" id="dsx-TT-Clv">
+                                <connections>
+                                    <action selector="startUpdateLocation:" destination="BYZ-38-t0r" id="XaQ-2N-gQy"/>
+                                </connections>
+                            </barButtonItem>
+                        </rightBarButtonItems>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="lastRouteButton" destination="9cy-sr-spL" id="wg0-Uy-Wyb"/>
+                        <outlet property="mapView" destination="yGz-hp-xe5" id="t9d-Z8-dEK"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1868.1159420289857" y="20.758928571428569"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="msR-Cw-ie3">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="NtB-N0-QJh" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="h6j-gK-JhU">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="qPc-2w-bKY" kind="relationship" relationship="rootViewController" id="Myd-cw-4Hd"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="sBb-D9-ctb" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="34.782608695652179" y="20.758928571428569"/>
+        </scene>
+    </scenes>
+</document>
